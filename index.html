@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark-gray">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GalleyForge — Journal Article Galley Preparation Tool</title>
+  <meta name="description" content="Prepare PubMed JATS XML and publication-ready HTML galleys for scholarly journal articles. Supports OJS native XML import and Word document paste.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/GalleyForge_Favicon-CQPQsNDg.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-DzQhPu15.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BhOr3GWN.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <!-- SVG Logo using #022744 color -->
+        <svg class="header-logo" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.75rem;">
+          <rect width="24" height="24" rx="6" fill="#022744"/>
+          <path d="M7 6H17V8H7V6Z" fill="white"/>
+          <path d="M7 10H17V12H7V10Z" fill="white"/>
+          <path d="M7 14H14V16H7V14Z" fill="white"/>
+          <path d="M16 14.5L19 17.5M19 17.5L16 20.5M19 17.5H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <h1 class="logo-text">GalleyForge</h1>
+          <span class="logo-sub">Journal Article Galley Preparation</span>
+        </div>
+      </div>
+
+      <!-- Action items -->
+      <div class="header-actions">
+        <!-- Save/Load Project -->
+        <button class="btn btn-secondary btn-sm" id="btn-load-project" title="Load saved project JSON">
+          <span class="icon">📂</span> Load Project
+        </button>
+        <button class="btn btn-secondary btn-sm" id="btn-save-project" title="Save current project to JSON">
+          <span class="icon">💾</span> Save Project
+        </button>
+        <input type="file" id="file-load-project" accept=".json" style="display:none;" />
+
+        <span class="header-sep"></span>
+
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+          <button id="theme-toggle-light" title="Light Theme">☀️</button>
+          <button id="theme-toggle-dark" title="Dark Gray Theme" class="active">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+      <button class="tab-btn" data-tab="panel-journal-profile">Journal Profile</button>
+      <button class="tab-btn active" data-tab="panel-metadata">Metadata</button>
+      <button class="tab-btn" data-tab="panel-import">Import OJS XML</button>
+      <button class="tab-btn" data-tab="panel-body">Body Content</button>
+      <button class="tab-btn" data-tab="panel-references">References</button>
+      <button class="tab-btn" data-tab="panel-generate">Generate</button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="tab-panel" id="panel-journal-profile"></div>
+      <div class="tab-panel active" id="panel-metadata"></div>
+      <div class="tab-panel" id="panel-import"></div>
+      <div class="tab-panel" id="panel-body"></div>
+      <div class="tab-panel" id="panel-references"></div>
+      <div class="tab-panel" id="panel-generate"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        Powered by <a href="https://www.anvikshapublisher.com/" target="_blank">Anviksha Publisher</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Main JavaScript bundle -->
+</body>
+</html>
